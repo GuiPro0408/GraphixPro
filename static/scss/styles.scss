@@ -41,7 +41,7 @@ body {
 // effects
 @keyframes slideInFromLeft {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-1000px);
     opacity: 0;
   }
   100% {
@@ -52,7 +52,7 @@ body {
 
 @keyframes slideInFromRight {
   0% {
-    transform: translateX(100%);
+    transform: translateX(1000px);
     opacity: 0;
   }
   100% {
@@ -82,4 +82,22 @@ body {
 
 .slide-in-top {
   animation: slideInFromTop 1s forwards;
+}
+
+.slide_in {
+  opacity: 0;
+}
+
+@mixin custom-border-bottom($depth: 5px, $color: $primary-color, $width: 0) {
+  &::before {
+    content: "";
+    height: $depth;
+    position: absolute;
+    background-color: $color;
+    width: $width;
+    left: 0;
+    bottom: -5px;
+    transition: all 0.3s ease;
+    border-bottom-right-radius: 15px;
+  }
 }

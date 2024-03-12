@@ -52,11 +52,16 @@ body.portfolio {
   }
 
   .portfolio-title {
-    margin-bottom: 20px;
+    display: table;
+    margin: 0 auto 20px auto;
     text-align: center;
     color: $primary-color;
     font-size: 32px;
     font-weight: bold;
+    position: relative;
+
+    // call mixin custom-border-bottom
+    @include custom-border-bottom(5px, $primary-color, 90%);
   }
 
   .gallery {
@@ -74,6 +79,7 @@ body.portfolio {
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s ease;
+      opacity: 0;
 
       &:hover {
         box-shadow:

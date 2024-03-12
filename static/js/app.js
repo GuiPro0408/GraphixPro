@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const options = {
     root: null, // uses the viewport
-    threshold: 0.1, // 10% of the element must be in the viewport
-    rootMargin: "200px", // from the top of the viewport
+    threshold: 0.5, // 10% of the element must be in the viewport
+    rootMargin: "100px", // from the top of the viewport
   };
 
   const observer = new IntersectionObserver(function(entries, observer) {

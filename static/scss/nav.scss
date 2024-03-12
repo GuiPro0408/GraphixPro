@@ -1,3 +1,6 @@
+// Import styles.scss
+@import "styles";
+
 .site-header {
   display: flex;
   align-items: center;
@@ -28,16 +31,7 @@
       color: #fff;
       position: relative;
 
-      &::before {
-        content: "";
-        height: 5px;
-        position: absolute;
-        background-color: #f8b500;
-        width: 0%;
-        left: 0;
-        bottom: -5px;
-        transition: all 0.3s ease;
-      }
+      @include custom-border-bottom(5px, $primary-color, 0);
 
       &:hover::before {
         width: 100%;
@@ -88,19 +82,10 @@
           transition: all 0.3s ease;
 
           &:hover {
-            color: #f8b500;
+            color: $primary-color;
           }
 
-          &::before {
-            content: "";
-            height: 3px;
-            position: absolute;
-            background-color: #f8b500;
-            width: 0%;
-            left: 0;
-            bottom: -10px;
-            transition: all 0.3s ease;
-          }
+          @include custom-border-bottom(3px, $primary-color, 0);
 
           &:hover::before {
             width: 100%;
