@@ -2,6 +2,27 @@
 
 img { display: block; width: 100%; height: auto; }
 
-body { padding-top: 120px; }
+body { padding-top: 84.25px; }
+
+@keyframes slideInFromLeft { 0% { transform: translateX(-100%);
+    opacity: 0; }
+  100% { transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes slideInFromRight { 0% { transform: translateX(100%);
+    opacity: 0; }
+  100% { transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes slideInFromTop { 0% { transform: translateY(-1000px);
+    opacity: 0; }
+  100% { transform: translateY(0);
+    opacity: 1; } }
+
+.slide-in-left { animation: slideInFromLeft 1s forwards; }
+
+.slide-in-right { animation: slideInFromRight 1s forwards; }
+
+.slide-in-top { animation: slideInFromTop 1s forwards; }
 
 /*# sourceMappingURL=styles.css.map */

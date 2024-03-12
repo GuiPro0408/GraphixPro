@@ -11,13 +11,21 @@
   <link rel="stylesheet" href="{% sass_src 'scss/portfolio.scss' %}" type="text/css" />
 {% endblock %}
 
+{% block body_class %}
+  portfolio
+{% endblock %}
+
 {% block content %}
-  <h1>Portfolio</h1>
-  <p>Here are some of the projects I have worked on. Click on any of them to see more images.</p>
+  <div class="portfolio-header">
+    <h1 class="slide_in" data-animation="left">Professional Portfolio Gallery</h1>
+    <p class="slide_in" data-animation="right">Discover a curated collection of my latest projects, showcasing my expertise in Car Wrapping.<br>Click on any project for an in-depth look and additional imagery.</p>
+  </div>
+
+  <h2 class="slide_in portfolio-title" data-animation="top">Our Latest Masterpiece</h2>
 
   <div class="gallery">
     {% for palette in color_palettes %}
-      <div class="palette" data-id="{{ palette.id }}" onclick="showPaletteModal('{{ palette.id }}', '{{ palette.name }}', {{ palette.otherImages|safe }})">
+      <div class="palette slide_in" data-animation="{{ palette.direction }}" data-id="{{ palette.id }}" onclick="showPaletteModal('{{ palette.id }}', '{{ palette.name }}', {{ palette.otherImages|safe }})">
         <div class="palette-img-container">
           <img src="{{ palette.mainImage }}" alt="{{ palette.name }}" />
         </div>
@@ -36,9 +44,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="modalTitle"></h5>
-            <button type="button" class="close" id="close-portfolio-modal" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <button type="button" class="close" id="close-portfolio-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           </div>
           <div class="modal-body">
             <div class="swiper" id="swiperModal">
