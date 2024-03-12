@@ -2,201 +2,339 @@
 @import "styles";
 
 /* Enhancing the modal design */
-$modal-background-color: #fff;
-$modal-header-color: #4a4a4a;
+$modal-header-color: #e5e5e5;
 $modal-border-color: #e5e5e5;
 $modal-overlay-color: rgba(58, 58, 58, 0.8);
 $button-hover-color: darken($modal-header-color, 15%);
-$swiper-pagination-color: #007bff;
-$swiper-button-color: #007bff;
+$swiper-pagination-color: #ffc019;
+$swiper-button-color: #ffc019;
 $modal-transition-duration: 0.4s;
 $modal-max-width: 1000px;
 
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-
-  .palette {
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-
-    &:hover {
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-
-    .palette-img-container {
-      overflow: hidden;
-      width: 100%;
-      height: 200px;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    .palette-info {
-      padding: 20px;
-      background: $modal-background-color;
-      border-top: $palette-border;
-      border-radius: 0 0 8px 8px;
-
-      h3 {
-        color: $modal-title-color;
-        font-size: 20px;
-        font-weight: bold;
-      }
-    }
+// animation zoom effet indefinite on background
+@keyframes zoom {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 110%;
+  }
+  100% {
+    background-size: 100%;
   }
 }
 
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $modal-overlay-color;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition:
-    opacity $modal-transition-duration ease,
-    visibility $modal-transition-duration ease;
-}
+body.portfolio {
+  background-color: $background-color;
 
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
+  .portfolio-header {
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://res.cloudinary.com/duonub64d/image/upload/v1710251185/qvw1iysrfougmrayn0ou.webp");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 300px 0;
+    animation: zoom 5s infinite;
 
-.modal {
-  background: $modal-background-color;
-  border: 1px solid $modal-border-color;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 100%;
-  height: 700px;
-  max-width: $modal-max-width;
-  transform: translateY(-20px);
-  transition: transform $modal-transition-duration ease-out;
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: $primary-color;
+    }
 
-  &.active {
-    transform: translateY(0);
+    p {
+      font-size: 20px;
+      color: $text-color;
+      line-height: 1.6;
+    }
+  }
+
+  .portfolio-title {
+    margin-bottom: 20px;
+    text-align: center;
+    color: $primary-color;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+
+    .palette {
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        box-shadow:
+          #ffc01930 0px 10px 20px,
+          rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      }
+
+      .palette-img-container {
+        overflow: hidden;
+        width: 100%;
+        height: 200px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .palette-info {
+        padding: 20px;
+        background: $modal-background-color;
+        border-top: $palette-border;
+        border-radius: 0 0 8px 8px;
+
+        h3 {
+          color: $modal-title-color;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $modal-overlay-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity $modal-transition-duration ease,
+      visibility $modal-transition-duration ease;
+  }
+
+  .modal-overlay.active {
     opacity: 1;
     visibility: visible;
   }
 
-  .modal-dialog {
+  .modal {
+    background: $modal-background-color;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     width: 100%;
-    height: 100%;
+    height: 700px;
+    max-width: $modal-max-width;
+    transform: translateY(-20px);
+    transition: transform $modal-transition-duration ease-out;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
 
-    .modal-content {
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-dialog {
       width: 100%;
       height: 100%;
 
-      .modal-header {
-        margin-bottom: 20px;
-        color: $modal-header-color;
-        font-size: 24px;
-        font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      .modal-content {
+        width: 100%;
+        height: 100%;
 
-        .close {
-          cursor: pointer;
-          background: transparent;
-          border: 0;
-          font-size: 1.5rem;
+        .modal-header {
+          margin-bottom: 20px;
           color: $modal-header-color;
+          font-size: 24px;
+          font-weight: bold;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
 
-          &:hover {
-            color: $button-hover-color;
+          .close {
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            font-size: 1.5rem;
+            color: $modal-border-color;
+
+            &:hover {
+              color: $button-hover-color;
+            }
           }
         }
-      }
 
-      .modal-body {
-        height: 600px;
-        overflow: hidden;
-        border-radius: 8px;
+        .modal-body {
+          height: 600px;
+          overflow: hidden;
+          border-radius: 8px;
 
-        .swiper {
-          width: 100%;
-          height: 100%;
+          .swiper {
+            width: 100%;
+            height: 100%;
 
-          .swiper-wrapper {
-            .swiper-slide {
-              width: 100%;
-              height: 100%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              overflow: hidden;
-
-              img {
-                border-radius: 8px;
+            .swiper-wrapper {
+              .swiper-slide {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+
+                img {
+                  border-radius: 8px;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
               }
+            }
+
+            .swiper-pagination-horizontal {
+              background-color: $modal-background-color;
+              width: fit-content;
+              left: 50%;
+              transform: translateX(-50%);
+              padding: 2px 10px 5px 10px;
+              border-radius: 15px;
             }
           }
         }
       }
     }
-  }
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: $swiper-button-color;
-    &::after {
-      font-size: 20px;
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: $swiper-button-color;
+      &::after {
+        font-size: 20px;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background: $swiper-pagination-color;
     }
   }
 
+  /* Swiper specific styles */
+  .swiper-button-next,
+  .swiper-button-prev {
+    background: rgba($modal-background-color, 1) !important;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+
+    &:after {
+      font-size: 20px;
+      color: $swiper-button-color;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background: lighten($modal-border-color, 10%);
+    opacity: 1;
+  }
+
   .swiper-pagination-bullet-active {
-    background: $swiper-pagination-color;
+    background: $swiper-pagination-color !important;
   }
 }
 
-/* Swiper specific styles */
-.swiper-button-next,
-.swiper-button-prev {
-  background: rgba($modal-background-color, 0.5) !important;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media screen and (max-width: 1300px) {
+  .portfolio-header {
+    padding: 200px 0 !important;
 
-  &:after {
-    font-size: 20px;
-    color: $swiper-button-color;
+    h1 {
+      font-size: 40px !important;
+    }
+
+    p {
+      font-size: 1px !important;
+    }
   }
 }
 
-.swiper-pagination-bullet {
-  background: lighten($modal-border-color, 10%);
-  opacity: 1;
+@media screen and (max-width: 1000px) {
+  .portfolio-header {
+    padding: 150px 0 !important;
+
+    h1 {
+      font-size: 32px !important;
+    }
+
+    p {
+      font-size: 18px !important;
+    }
+  }
 }
 
-.swiper-pagination-bullet-active {
-  background: $swiper-pagination-color !important;
+@media screen and (max-width: 800px) {
+  .portfolio-header {
+    padding: 100px 0 !important;
+
+    h1 {
+      font-size: 28px !important;
+    }
+
+    p {
+      font-size: 14px !important;
+    }
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio-header {
+    padding: 50px 0 !important;
+
+    h1 {
+      font-size: 24px !important;
+    }
+
+    p {
+      font-size: 12px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .portfolio-header {
+    padding: 20px 0 !important;
+
+    h1 {
+      font-size: 20px !important;
+    }
+
+    p {
+      font-size: 10px !important;
+    }
+  }
 }

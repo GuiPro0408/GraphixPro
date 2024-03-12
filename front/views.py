@@ -23,12 +23,15 @@ def services(request):
 def portfolio(request):
     color_palettes = ColorPalette.objects.prefetch_related('otherImages').all()
     palettes_data = []
+    directions = ['left', 'right', 'top']
+
     for palette in color_palettes:
         palette_data = {
             'id': palette.id,
             'name': palette.name,
             'mainImage': palette.mainImage.url,
-            'otherImages': [image.image.url for image in palette.otherImages.all()]
+            'otherImages': [image.image.url for image in palette.otherImages.all()],
+            'direction': directions[palette.id % 3]
         }
         palettes_data.append(palette_data)
     return render(request, 'portfolio.html', {'color_palettes': palettes_data})

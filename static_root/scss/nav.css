@@ -1,7 +1,5 @@
 .site-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 50px; background: black; position: fixed; top: 0; left: 0; width: 100%; z-index: 999; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
 
-.site-header.fixed { position: fixed; top: 0; left: 0; width: 100%; z-index: 999; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
-
 .site-header .logo-container { display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; }
 
 .site-header .logo-container .logo { width: 50px; }
