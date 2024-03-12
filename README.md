@@ -17,14 +17,14 @@ To get started with Graphix-Pro, ensure you have Python, PostgreSQL, and Node.js
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/GuiPro0408/Graphix-Pro.git
-   cd Graphix-Pro
+   git clone git@github.com:GuiPro0408/GraphixPro.git
+   cd GraphixPro
    ```
 
 2. Set up a virtual environment and activate it:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
 3. Install the required Python dependencies:
@@ -56,7 +56,7 @@ After installation, access the web application at `http://localhost:8000`. Use t
 
 ## Contributing
 
-Contributions to Graphix-Pro are welcome! Please follow these steps to contribute:
+Contributions to GraphixPro are welcome! Please follow these steps to contribute:
 
 1. Fork the repository.
 2. Create a new branch for your feature (`git checkout -b feature/AmazingFeature`).
@@ -70,7 +70,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Project Link: [https://github.com/GuiPro0408/Graphix-Pro](https://github.com/GuiPro0408/Graphix-Pro)
+Project Link: [https://github.com/GuiPro0408/GraphixPro](https://github.com/GuiPro0408/GraphixPro)
 
 ## Authors
 
