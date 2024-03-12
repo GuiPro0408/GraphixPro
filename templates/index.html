@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load sass_tags %}
+{% load static %}
+
+{% block title %}Home | Graphix-Pro{% endblock %}
+
+{% block additional_head %}
+  <link href="{% sass_src 'scss/home.scss' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h2>Welcome to Graphix-Pro</h2>
+  <p>Your one-stop shop for all your branding needs.</p>
+</section>
+
+<section class="services">
+  <h2>Our Services</h2>
+  <div class="service-list">
+    <div class="service">
+      <h3>Signboard</h3>
+      <p>High-quality signboards for every business.</p>
+    </div>
+    <div class="service">
+      <h3>Vehicle Wrap</h3>
+      <p>Turn your fleet into moving advertisements.</p>
+    </div>
+    <!-- Add more services as needed -->
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>What Our Clients Say</h2>
+  <div class="testimonial">
+    <blockquote>"Graphix-Pro transformed our storefront. Highly recommend their services!"</blockquote>
+    <p>- Business Owner</p>
+  </div>
+  <!-- Add more testimonials as needed -->
+</section>
+
+<section class="contact">
+  <h2>Contact Us</h2>
+  <p>Have a project in mind? <a href="{% url 'contact' %}">Get in touch</a> today!</p>
+</section>
+{% endblock %}
+
+{% block extrajs %}
+  <!-- Any additional JS for the homepage -->
+{% endblock %}

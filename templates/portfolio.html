@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+{% load sass_tags %}
+{% load static %}
+
+{% block title %}
+  Portfolio | Graphix-Pro
+{% endblock %}
+
+{% block additional_head %}
+  <link rel="stylesheet" href="{% sass_src 'scss/portfolio.scss' %}" type="text/css" />
+{% endblock %}
+
+{% block content %}
+  <h1>Portfolio</h1>
+  <p>Here are some of the projects I have worked on. Click on any of them to see more images.</p>
+
+  <div class="gallery">
+    {% for palette in color_palettes %}
+      <div class="palette" data-id="{{ palette.id }}" onclick="showPaletteModal('{{ palette.id }}', '{{ palette.name }}', {{ palette.otherImages|safe }})">
+        <div class="palette-img-container">
+          <img src="{{ palette.mainImage }}" alt="{{ palette.name }}" />
+        </div>
+
+        <div class="palette-info">
+          <h3>{{ palette.name }}</h3>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Singular Modal Structure -->
+  <div class="modal-overlay" id="paletteModalOverlay">
+    <div class="modal" id="paletteModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle"></h5>
+            <button type="button" class="close" id="close-portfolio-modal" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="swiper" id="swiperModal">
+              <div class="swiper-wrapper" id="swiperWrapper"></div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block extrajs %}
+  <script src="{% static 'js/portfolio.js' %}"></script>
+{% endblock %}

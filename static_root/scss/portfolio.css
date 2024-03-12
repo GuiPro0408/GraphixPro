@@ -1,0 +1,61 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Montserrat", sans-serif; }
+
+img { display: block; width: 100%; height: auto; }
+
+/* Enhancing the modal design */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+
+.gallery .palette { cursor: pointer; position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease; }
+
+.gallery .palette:hover { box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; }
+
+.gallery .palette .palette-img-container { overflow: hidden; width: 100%; height: 200px; }
+
+.gallery .palette .palette-img-container img { width: 100%; height: 100%; object-fit: cover; }
+
+.gallery .palette .palette-info { padding: 20px; background: #fff; border-top: 1px solid #ddd; border-radius: 0 0 8px 8px; }
+
+.gallery .palette .palette-info h3 { color: #333; font-size: 20px; font-weight: bold; }
+
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(58, 58, 58, 0.8); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; }
+
+.modal-overlay.active { opacity: 1; visibility: visible; }
+
+.modal { background: #fff; border: 1px solid #e5e5e5; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 20px; width: 100%; height: 700px; max-width: 1000px; transform: translateY(-20px); transition: transform 0.4s ease-out; opacity: 0; visibility: hidden; overflow: hidden; }
+
+.modal.active { transform: translateY(0); opacity: 1; visibility: visible; }
+
+.modal .modal-dialog { width: 100%; height: 100%; }
+
+.modal .modal-dialog .modal-content { width: 100%; height: 100%; }
+
+.modal .modal-dialog .modal-content .modal-header { margin-bottom: 20px; color: #4a4a4a; font-size: 24px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+
+.modal .modal-dialog .modal-content .modal-header .close { cursor: pointer; background: transparent; border: 0; font-size: 1.5rem; color: #4a4a4a; }
+
+.modal .modal-dialog .modal-content .modal-header .close:hover { color: #242424; }
+
+.modal .modal-dialog .modal-content .modal-body { height: 600px; overflow: hidden; border-radius: 8px; }
+
+.modal .modal-dialog .modal-content .modal-body .swiper { width: 100%; height: 100%; }
+
+.modal .modal-dialog .modal-content .modal-body .swiper .swiper-wrapper .swiper-slide { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+
+.modal .modal-dialog .modal-content .modal-body .swiper .swiper-wrapper .swiper-slide img { border-radius: 8px; width: 100%; height: 100%; object-fit: cover; }
+
+.modal .swiper-button-prev, .modal .swiper-button-next { color: #007bff; }
+
+.modal .swiper-button-prev::after, .modal .swiper-button-next::after { font-size: 20px; }
+
+.modal .swiper-pagination-bullet-active { background: #007bff; }
+
+/* Swiper specific styles */
+.swiper-button-next, .swiper-button-prev { background: rgba(255, 255, 255, 0.5) !important; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+
+.swiper-button-next:after, .swiper-button-prev:after { font-size: 20px; color: #007bff; }
+
+.swiper-pagination-bullet { background: white; opacity: 1; }
+
+.swiper-pagination-bullet-active { background: #007bff !important; }
+
+/*# sourceMappingURL=portfolio.css.map */

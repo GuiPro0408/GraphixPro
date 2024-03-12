@@ -1,0 +1,202 @@
+// Import styles.scss
+@import "styles";
+
+/* Enhancing the modal design */
+$modal-background-color: #fff;
+$modal-header-color: #4a4a4a;
+$modal-border-color: #e5e5e5;
+$modal-overlay-color: rgba(58, 58, 58, 0.8);
+$button-hover-color: darken($modal-header-color, 15%);
+$swiper-pagination-color: #007bff;
+$swiper-button-color: #007bff;
+$modal-transition-duration: 0.4s;
+$modal-max-width: 1000px;
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+
+  .palette {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .palette-img-container {
+      overflow: hidden;
+      width: 100%;
+      height: 200px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .palette-info {
+      padding: 20px;
+      background: $modal-background-color;
+      border-top: $palette-border;
+      border-radius: 0 0 8px 8px;
+
+      h3 {
+        color: $modal-title-color;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $modal-overlay-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity $modal-transition-duration ease,
+    visibility $modal-transition-duration ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: $modal-background-color;
+  border: 1px solid $modal-border-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  height: 700px;
+  max-width: $modal-max-width;
+  transform: translateY(-20px);
+  transition: transform $modal-transition-duration ease-out;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-dialog {
+    width: 100%;
+    height: 100%;
+
+    .modal-content {
+      width: 100%;
+      height: 100%;
+
+      .modal-header {
+        margin-bottom: 20px;
+        color: $modal-header-color;
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .close {
+          cursor: pointer;
+          background: transparent;
+          border: 0;
+          font-size: 1.5rem;
+          color: $modal-header-color;
+
+          &:hover {
+            color: $button-hover-color;
+          }
+        }
+      }
+
+      .modal-body {
+        height: 600px;
+        overflow: hidden;
+        border-radius: 8px;
+
+        .swiper {
+          width: 100%;
+          height: 100%;
+
+          .swiper-wrapper {
+            .swiper-slide {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              overflow: hidden;
+
+              img {
+                border-radius: 8px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: $swiper-button-color;
+    &::after {
+      font-size: 20px;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $swiper-pagination-color;
+  }
+}
+
+/* Swiper specific styles */
+.swiper-button-next,
+.swiper-button-prev {
+  background: rgba($modal-background-color, 0.5) !important;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:after {
+    font-size: 20px;
+    color: $swiper-button-color;
+  }
+}
+
+.swiper-pagination-bullet {
+  background: lighten($modal-border-color, 10%);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: $swiper-pagination-color !important;
+}
