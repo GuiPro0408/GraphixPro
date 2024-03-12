@@ -2,6 +2,8 @@
 
 img { display: block; width: 100%; height: auto; }
 
+body { padding-top: 120px; }
+
 /* Enhancing the modal design */
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
 
