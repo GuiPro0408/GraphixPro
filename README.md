@@ -11,6 +11,27 @@ Graphix-Pro is a comprehensive solution for all your graphic design needs, speci
 - Contact form for inquiries
 - Editable gallery for easy client management
 
+## Technical Overview
+
+### Architecture
+
+Built on the Django framework, Graphix-Pro offers a powerful, scalable solution for graphic design project management. Our application is structured to serve the dual needs of showcasing work and administrative control, backed by a robust PostgreSQL database.
+
+### Core Components
+
+- **Portfolio Management:** Display and organize design projects with ease.
+- **Service Pages:** Informative and detailed pages about the services offered.
+- **Client Testimonials:** Gather and present feedback from clients to build trust.
+- **Inquiry Forms:** Embedded forms for direct communication from potential clients.
+- **Admin Interface:** An intuitive backend for managing content and inquiries.
+
+### Technology Stack
+
+- **Backend:** Python 3.11, Django 4.2.11
+- **Frontend:** HTML5, SCSS, JavaScript
+- **Database:** PostgreSQL
+- **Development Tools:** Git, Node.js
+
 ## Installation
 
 To get started with Graphix-Pro, ensure you have Python, PostgreSQL, and Node.js installed on your system. Then follow these steps:
