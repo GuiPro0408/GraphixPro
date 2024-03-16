@@ -2,8 +2,6 @@
 
 img { display: block; width: 100%; height: auto; }
 
-body { padding-top: 84.25px; }
-
 @keyframes slideInFromLeft { 0% { transform: translateX(-1000px);
     opacity: 0; }
   100% { transform: translateX(0);

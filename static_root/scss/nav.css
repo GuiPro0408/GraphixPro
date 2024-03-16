@@ -2,8 +2,6 @@
 
 img { display: block; width: 100%; height: auto; }
 
-body { padding-top: 84.25px; }
-
 @keyframes slideInFromLeft { 0% { transform: translateX(-1000px);
     opacity: 0; }
   100% { transform: translateX(0);
@@ -27,7 +25,7 @@ body { padding-top: 84.25px; }
 
 .slide_in { opacity: 0; }
 
-.site-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 50px; background: black; position: fixed; top: 0; left: 0; width: 100%; z-index: 999; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+.site-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 50px; background: black; position: sticky; top: 0; left: 0; width: 100%; z-index: 999; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
 
 .site-header .logo-container { display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; }
 
