@@ -68,6 +68,19 @@ img {
   }
 }
 
+@keyframes zoom {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 110%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+
 .slide-in-left {
   animation: slideInFromLeft 1s forwards;
 }
@@ -96,4 +109,10 @@ img {
     transition: all 0.3s ease;
     border-bottom-right-radius: 15px;
   }
+}
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  overflow-x: hidden;
 }

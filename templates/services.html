@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+{% load sass_tags %}
+{% load static %}
+
+{% block title %}
+  Services | Graphix-Pro
+{% endblock %}
+
+{% block additional_head %}
+  <link rel="stylesheet" href="{% sass_src 'scss/services.scss' %}" type="text/css" />
+{% endblock %}
+
+{% block body_class %}
+  services
+{% endblock %}
+
+{% block content %}
+  <div class="services-header">
+    <h1 class="slide_in" data-animation="left">SERVICES</h1>
+    <p class="slide_in" data-animation="right">We offer a wide range of services. Discover what we can do for you.</p>
+  </div>
+
+  <!-- Presents services -->
+  <div class="services-container">
+    <div class="service">
+      <div class="service-image slide_in" data-animation="left">
+        <img src="{% static 'img/services/car-wrapping.png' %}" alt="Vehicle Wrap">
+      </div>
+      <div class="service-content slide_in" data-animation="right">
+        <h2>Vehicle Wrap</h2>
+        <p>Our vehicle wraps are the moving canvas for your brand. Expertly designed and applied, they'll turn heads and widen your audience with every mile.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="left">
+        <img src="{% static 'img/services/signboard.jpg' %}" alt="Graphic Design">
+      </div>
+      <div class="service-content slide_in" data-animation="right">
+        <h2>Signboard</h2>
+        <p>Elevate your storefront with our custom signboards. Designed for durability and high visibility, they will reflect your brand's quality and professionalism.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="right">
+        <img src="{% static 'img/services/posters.jpg' %}" alt="SEO">
+      </div>
+      <div class="service-content slide_in" data-animation="left">
+        <h2>Posters</h2>
+        <p>From small to large scale, our posters are printed with precision and clarity to capture attention and convey your message effectively.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="right">
+        <img src="{% static 'img/services/number-plate.jpg' %}" alt="Photography">
+      </div>
+      <div class="service-content slide_in" data-animation="left">
+        <h2>Number Plate</h2>
+        <p>Custom number plates for an individual touch to your vehicle. Reflect your unique style with our diverse customization options.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="left">
+        <img src="{% static 'img/services/decal.jpg' %}" alt="Social Media">
+      </div>
+      <div class="service-content slide_in" data-animation="right">
+        <h2>Decal</h2>
+        <p>Custom decals to bring your brand to life on any surface. Ideal for promotions, branding, and personalized expressions that stick.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="left">
+        <img src="{% static 'img/services/one-way-vision.jpeg' %}" alt="One Way Vision">
+      </div>
+      <div class="service-content slide_in" data-animation="right">
+        <h2>One Way Vision</h2>
+        <p>Perfect for glass surfaces, one way vision allows you to see out while showcasing your message to the world, a clever tool for privacy and marketing.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="left">
+        <img src="{% static 'img/services/roller-banner.jpg' %}" alt="Roller Banner">
+      </div>
+      <div class="service-content slide_in" data-animation="right">
+        <h2>Roller Banner</h2>
+        <p>Stand out at your next event with our roller banners. Portable, easy to set up, and designed to make a lasting impression.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="right">
+        <img src="{% static 'img/services/window-tint.jpg' %}" alt="Window Tint">
+      </div>
+      <div class="service-content slide_in" data-animation="left">
+        <h2>Window Tint</h2>
+        <p>Reduce glare and enhance privacy with our professional window tinting services. A functional upgrade that adds a sleek look to your vehicle or premises.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="left">
+        <img src="{% static 'img/services/business-card.jpg' %}" alt="Business Card">
+      </div>
+      <div class="service-content slide_in" data-animation="right">
+        <h2>Business Card</h2>
+        <p>Make a memorable first impression with our premium business cards. Customizable, high-quality, and designed to represent your professional identity.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="right">
+        <img src="{% static 'img/services/flex-banner.jpg' %}" alt="Flex Banner">
+      </div>
+      <div class="service-content slide_in" data-animation="left">
+        <h2>Flex Banner</h2>
+        <p>Durable and flexible, our flex banners are made to withstand the elements, ensuring your message stays vibrant and clear.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="left">
+        <img src="{% static 'img/services/pvc-form-board.jpg' %}" alt="PVC Form Board">
+      </div>
+      <div class="service-content slide_in" data-animation="right">
+        <h2>PVC Form Board</h2>
+        <p>Versatile PVC form boards for all your advertising needs. Lightweight, yet sturdy, perfect for both indoor and outdoor marketing.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="right">
+        <img src="{% static 'img/services/flyers.jpg' %}" alt="Flyers">
+      </div>
+      <div class="service-content slide_in" data-animation="left">
+        <h2>Flyers</h2>
+        <p>Spread the word fast with our eye-catching flyers. Designed for impact, they're the perfect way to promote events, offers, or your business.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="left">
+        <img src="{% static 'img/services/3d-acrylic-pvc.webp' %}" alt="3D Acrylic/PVC">
+      </div>
+      <div class="service-content slide_in" data-animation="right">
+        <h2>3D Acrylic/PVC</h2>
+        <p>Bring your brand to life with our 3D acrylic and PVC signs. The depth and dimension they add will ensure your message stands out.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-image slide_in" data-animation="right">
+        <img src="{% static 'img/services/illuminating-sign.webp' %}" alt="Illuminating Sign">
+      </div>
+      <div class="service-content slide_in" data-animation="left">
+        <h2>Illuminating Sign</h2>
+        <p>Light up your message with our illuminating signs. Ideal for round-the-clock visibility, they are a luminous beacon for your brand.</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block extrajs %}
+  <script src="{% static 'js/services.js' %}"></script>
+{% endblock %}

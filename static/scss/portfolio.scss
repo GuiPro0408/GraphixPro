@@ -12,21 +12,7 @@ $modal-transition-duration: 0.4s;
 $modal-max-width: 1000px;
 
 // animation zoom effet indefinite on background
-@keyframes zoom {
-  0% {
-    background-size: 100%;
-  }
-  50% {
-    background-size: 110%;
-  }
-  100% {
-    background-size: 100%;
-  }
-}
-
 body.portfolio {
-  background-color: $background-color;
-
   .portfolio-header {
     text-align: center;
     margin-bottom: 40px;

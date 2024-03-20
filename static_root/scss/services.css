@@ -1,0 +1,56 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Montserrat", sans-serif; }
+
+img { display: block; width: 100%; height: auto; }
+
+@keyframes slideInFromLeft { 0% { transform: translateX(-1000px);
+    opacity: 0; }
+  100% { transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes slideInFromRight { 0% { transform: translateX(1000px);
+    opacity: 0; }
+  100% { transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes slideInFromTop { 0% { transform: translateY(-1000px);
+    opacity: 0; }
+  100% { transform: translateY(0);
+    opacity: 1; } }
+
+@keyframes zoom { 0% { background-size: 100%; }
+  50% { background-size: 110%; }
+  100% { background-size: 100%; } }
+
+.slide-in-left { animation: slideInFromLeft 1s forwards; }
+
+.slide-in-right { animation: slideInFromRight 1s forwards; }
+
+.slide-in-top { animation: slideInFromTop 1s forwards; }
+
+.slide_in { opacity: 0; }
+
+body { background-color: #1a1a1a; color: #f5f5f5; overflow-x: hidden; }
+
+body.services .services-header { text-align: center; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/duonub64d/image/upload/v1710960333/nk2cv91mjesomzqdq7mu.webp"); background-size: 100%; background-position: center top; background-repeat: no-repeat; padding: 300px 0; animation: zoom 5s infinite; }
+
+body.services .services-header h1 { font-size: 48px; margin-bottom: 20px; color: #ffc019; }
+
+body.services .services-header p { font-size: 20px; color: #f5f5f5; line-height: 1.6; }
+
+body.services .services-container { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; }
+
+body.services .services-container .service { display: flex; justify-content: center; align-items: center; width: 100%; height: 400px; }
+
+body.services .services-container .service .service-image { width: 50%; height: 100%; }
+
+body.services .services-container .service .service-image img { width: 100%; height: 100%; object-fit: cover; }
+
+body.services .services-container .service:nth-child(even) { flex-direction: row-reverse; }
+
+body.services .services-container .service .service-content { width: 50%; padding: 40px; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+body.services .services-container .service .service-content h2 { font-size: 24px; margin-bottom: 20px; }
+
+body.services .services-container .service .service-content p { font-size: 16px; text-align: center; }
+
+/*# sourceMappingURL=services.css.map */
