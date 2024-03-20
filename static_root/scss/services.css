@@ -41,15 +41,21 @@ body.services .services-container { display: flex; flex-direction: column; justi
 
 body.services .services-container .service { display: flex; justify-content: center; align-items: center; width: 100%; height: 400px; }
 
-body.services .services-container .service .service-image { width: 50%; height: 100%; }
+body.services .services-container .service .service-image { width: 50%; height: 100%; overflow: hidden; }
 
-body.services .services-container .service .service-image img { width: 100%; height: 100%; object-fit: cover; }
+body.services .services-container .service .service-image img { width: 100%; height: 100%; object-fit: cover; transition: all 0.3s ease; }
+
+body.services .services-container .service .service-image img:hover { transform: scale(1.1); transition: all 0.3s ease; }
 
 body.services .services-container .service:nth-child(even) { flex-direction: row-reverse; }
 
 body.services .services-container .service .service-content { width: 50%; padding: 40px; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 
-body.services .services-container .service .service-content h2 { font-size: 24px; margin-bottom: 20px; }
+body.services .services-container .service .service-content h2 { font-size: 24px; margin-bottom: 20px; position: relative; }
+
+body.services .services-container .service .service-content h2::before { content: ""; height: 3px; position: absolute; background-color: #ffc019; width: 0; left: 0; bottom: -5px; transition: all 0.3s ease; border-bottom-right-radius: 15px; }
+
+body.services .services-container .service .service-content h2:hover::before { width: 80%; }
 
 body.services .services-container .service .service-content p { font-size: 16px; text-align: center; }
 
