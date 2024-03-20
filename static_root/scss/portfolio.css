@@ -56,7 +56,7 @@ body.portfolio .gallery .palette .palette-info { padding: 20px; background: #1e1
 
 body.portfolio .gallery .palette .palette-info h3 { color: #ddd; font-size: 20px; font-weight: bold; }
 
-body.portfolio .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(58, 58, 58, 0.8); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; }
+body.portfolio .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(58, 58, 58, 0.8); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; z-index: 1000; }
 
 body.portfolio .modal-overlay.active { opacity: 1; visibility: visible; }
 

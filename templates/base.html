@@ -53,7 +53,7 @@
             <a href="{% url 'services' %}" class="nav-link">Services</a>
           </li>
           <li>
-            <a href="{% url 'portfolio' %}" class="nav-link">Portfolio</a>
+            <a href="{% url 'portfolio' %}" class="nav-link">Gallery</a>
           </li>
           <li>
             <a href="{% url 'contact' %}" class="nav-link">Contact</a>
@@ -69,9 +69,21 @@
     </main>
 
     <footer>
-      <p>&copy; 2024 Your Website. All rights reserved.</p>
+      <div class="social-media-container">
+        <a href="#" class="social-media-link">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-media-link">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-media-link">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+      <p>&copy; 2024 Grafix Pro. All rights reserved.</p>
     </footer>
 
+    <script src="https://kit.fontawesome.com/956ab2c1ac.js" crossorigin="anonymous"></script>
     <script src="{% static 'js/app.js' %}"></script>
     {% block extrajs %}
     {% endblock %}

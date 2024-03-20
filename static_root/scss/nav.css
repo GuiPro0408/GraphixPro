@@ -79,4 +79,12 @@ img { display: block; width: 100%; height: auto; }
 
 @media (max-width: 550px) { .site-header .main-nav .menu-toggle { display: flex; } .site-header .main-nav ul { opacity: 0; visibility: hidden; flex-direction: column; position: absolute; background-color: black; padding: 20px 0; gap: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); justify-content: center; top: 0; right: 0; transition: all 0.3s ease; } .site-header .main-nav.active ul { display: flex; opacity: 1; visibility: visible; width: 100vw; height: 100vh; } }
 
+footer { display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 30px; gap: 50px; background: black; color: #fff; position: relative; bottom: 0; left: 0; width: 100%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); z-index: 1; }
+
+footer .social-media-container { display: flex; align-items: center; gap: 20px; }
+
+footer .social-media-container .social-media-link { font-size: 1.5rem; color: #fff; transition: all 0.3s ease; cursor: pointer; }
+
+footer .social-media-container .social-media-link:hover { color: #ffc019; }
+
 /*# sourceMappingURL=nav.css.map */

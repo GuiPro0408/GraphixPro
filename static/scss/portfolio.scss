@@ -129,6 +129,7 @@ body.portfolio {
     transition:
       opacity $modal-transition-duration ease,
       visibility $modal-transition-duration ease;
+    z-index: 1000;
   }
 
   .modal-overlay.active {
