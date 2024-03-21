@@ -1,16 +1,12 @@
 from django.shortcuts import render, redirect
 from .models import ColorPalette, PaletteImage
-from cloudinary.uploader import upload
+from django.core.mail import send_mail # Import the send_mail function
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.conf import settings
+from premailer import transform
 
-# urlpatterns = [
-#     path('', views.index, name='index'),
-#     path('about/', views.about, name='about'),
-#     path('services/', views.services, name='services'),
-#     path('portfolio/', views.portfolio, name='portfolio'),
-#     path('contact/', views.contact, name='contact'),
-# ]
-
-# Create your views here.
 def index(request):
     return render(request, 'index.html')
 
@@ -37,4 +33,30 @@ def portfolio(request):
     return render(request, 'portfolio.html', {'color_palettes': palettes_data})
 
 def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        # Construct the email subject
+        email_subject = f"New contact from {name}"
+
+        # Render the HTML email template with context
+        html_content = render_to_string('contact_email_template.html', {'name': name, 'email': email, 'message': message})
+        text_content = strip_tags(html_content)  # this strips the html, so people will have the text as well.
+
+        # Create EmailMessage object
+        email = EmailMessage(
+            subject=email_subject,
+            body=html_content,
+            from_email=settings.EMAIL_HOST_USER,  # From email
+            to=[email],  # To email
+        )
+        email.content_subtype = "html"  # this is required because we need to send HTML email
+        email.send()
+
+        # render contact page with success message
+        return render(request, 'contact.html', {'success': True})
+
+    # If not a POST request, just render the contact form page
     return render(request, 'contact.html')

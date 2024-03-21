@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div style="background-color: #f4f4f4; padding: 20px; border-radius: 8px; font-family: Arial, sans-serif;">
+        <div style="color: #444; font-size: 18px;">New contact from {{ name }}</div>
+        <div style="margin-top: 20px;">
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Email:</strong> {{ email }}</p>
+            <p><strong>Message:</strong></p>
+            <p>{{ message|linebreaksbr }}</p>
+        </div>
+    </div>
+</body>
+</html>
