@@ -49,7 +49,7 @@ def contact(request):
         email = EmailMessage(
             subject=email_subject,
             body=html_content,
-            from_email=email,  # From email
+            from_email=settings.EMAIL_HOST_USER,  # From email
             to=[settings.EMAIL_HOST_USER],  # To email
         )
         email.content_subtype = "html"  # this is required because we need to send HTML email
