@@ -1,0 +1,150 @@
+// Import styles.scss
+@import "styles";
+
+body.home {
+  .home-header {
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/static/img/car-2.webp");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 300px 0;
+    animation: zoom 5s infinite;
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: $primary-color;
+    }
+
+    .justify-content-center {
+      justify-content: center !important;
+    }
+
+    p {
+      font-size: 20px;
+      color: $text-color;
+      line-height: 1.6;
+    }
+  }
+
+  .text {
+    font-size: 20px;
+    color: $text-color;
+    line-height: 1.6;
+    text-align: center;
+    color: #ffc019;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .quality-containers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .quality {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 20%;
+      align-items: center;
+
+      @media (max-width: 991px) {
+        max-width: 50%;
+      }
+
+      @media (max-width: 575px) {
+        max-width: 100%;
+      }
+    }
+
+    .quality-text {
+      color: $primary-color; // Define your primary color variable
+      flex-grow: 1;
+      text-align: center;
+      margin: 0;
+      span {
+        display: block;
+      }
+    }
+
+    .quality-image {
+      margin-top: 2rem;
+      width: 50px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .services-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .service {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 400px;
+
+      .service-image {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .service-content {
+        width: 50%;
+        padding: 40px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+          position: relative;
+
+          @include custom-border-bottom(3px, $primary-color, 0);
+
+          &:hover::before {
+            width: 80%;
+          }
+        }
+
+        p {
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

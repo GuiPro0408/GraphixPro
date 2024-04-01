@@ -8,26 +8,61 @@
   <link href="{% sass_src 'scss/home.scss' %}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
-{% block content %}
-<section class="hero">
-  <h2>Welcome to Graphix-Pro</h2>
-  <p>Your one-stop shop for all your branding needs.</p>
-</section>
+{% block body_class %}
+  home
+{% endblock %}
 
-<section class="services">
-  <h2>Our Services</h2>
-  <div class="service-list">
-    <div class="service">
-      <h3>Signboard</h3>
-      <p>High-quality signboards for every business.</p>
-    </div>
-    <div class="service">
-      <h3>Vehicle Wrap</h3>
-      <p>Turn your fleet into moving advertisements.</p>
-    </div>
-    <!-- Add more services as needed -->
+{% block content %}
+<div class="home-header">
+  <h1 class="slide_in slide-in-left" data-animation="left">Grafix Pro</h1>
+  <p class="slide_in slide-in-right" data-animation="right">Boost your brand with Grafix Pro's expert vehicle wraps. Combining protection with striking designs, our wraps are canvases for your message, driving your marketing with style.</p>
+</div>
+
+<div class="quality-containers">
+  <div class="quality">
+    <h3 class="quality-text"><span>AVAILABLE</span><br>24/7</h3>
+    <div class="quality-image"><img src="/static/img/time.png" class="img-fluid"></div>
   </div>
-</section>
+
+  <div class="quality">
+    <h3 class="quality-text"><span>COLOR</span><br>CHANGE</h3>
+    <div class="quality-image"><img src="/static/img/color.png" class="img-fluid"></div>
+  </div>
+
+  <div class="quality">
+    <h3 class="quality-text"><span>FIT TO</span><br>ANY CAR</h3>
+    <div class="quality-image"><img src="/static/img/cars.png" class="img-fluid"></div>
+  </div>
+
+  <div class="quality">
+    <h3 class="quality-text"><span>3D</span><br>PREVIEW</h3>
+    <div class="quality-image"><img src="/static/img/view.png" class="img-fluid"></div>
+  </div>
+</div>
+
+<p class="text">Unleash the full potential of your brand with Grafix Pro, the ultimate destination for transformative visual solutions. Our state-of-the-art vehicle wraps not only protect your investment but turn heads with unparalleled custom graphics. Experience the intersection of durability and design, where every inch of vinyl is a canvas for your brand's message. Drive your marketing forward with Grafix Pro—where your vision meets the road.</p>
+
+<div class="services-container">
+  <div class="service">
+    <div class="service-image slide_in slide-in-left" data-animation="left">
+      <img src="/static/img/services/car-wrapping.png" alt="Vehicle Wrap">
+    </div>
+    <div class="service-content slide_in slide-in-right" data-animation="right">
+      <h2>Vehicle Wrap</h2>
+      <p>Our vehicle wraps are the moving canvas for your brand. Expertly designed and applied, they'll turn heads and widen your audience with every mile.</p>
+    </div>
+  </div>
+
+  <div class="service">
+    <div class="service-image slide_in slide-in-left" data-animation="left">
+      <img src="/static/img/services/signboard.jpg" alt="Graphic Design">
+    </div>
+    <div class="service-content slide_in slide-in-right" data-animation="right">
+      <h2>Signboard</h2>
+      <p>Elevate your storefront with our custom signboards. Designed for durability and high visibility, they will reflect your brand's quality and professionalism.</p>
+    </div>
+  </div>
+</div>
 
 <section class="testimonials">
   <h2>What Our Clients Say</h2>
