@@ -60,3 +60,7 @@ def contact(request):
 
     # If not a POST request, just render the contact form page
     return render(request, 'contact.html')
+
+def home(request):
+    tests = Testimonials.objects.order_by('id')[:13]
+    return render(request, 'hme/home.html', {'tests': tests})

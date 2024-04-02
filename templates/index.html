@@ -18,6 +18,8 @@
   <p class="slide_in slide-in-right" data-animation="right">Boost your brand with Grafix Pro's expert vehicle wraps. Combining protection with striking designs, our wraps are canvases for your message, driving your marketing with style.</p>
 </div>
 
+<h2 class="slide_in section-title slide-in-top" data-animation="top">Our Qualities</h2>
+
 <div class="quality-containers">
   <div class="quality">
     <h3 class="quality-text"><span>AVAILABLE</span><br>24/7</h3>
@@ -42,6 +44,8 @@
 
 <p class="text">Unleash the full potential of your brand with Grafix Pro, the ultimate destination for transformative visual solutions. Our state-of-the-art vehicle wraps not only protect your investment but turn heads with unparalleled custom graphics. Experience the intersection of durability and design, where every inch of vinyl is a canvas for your brand's message. Drive your marketing forward with Grafix Pro—where your vision meets the road.</p>
 
+<h2 class="slide_in section-title slide-in-top" data-animation="top">Our Services</h2>
+
 <div class="services-container">
   <div class="service">
     <div class="service-image slide_in slide-in-left" data-animation="left">
@@ -62,21 +66,44 @@
       <p>Elevate your storefront with our custom signboards. Designed for durability and high visibility, they will reflect your brand's quality and professionalism.</p>
     </div>
   </div>
+
+  <div class="service">
+    <div class="service-image slide_in" data-animation="right">
+      <img src="{% static 'img/services/number-plate.jpg' %}" alt="Photography">
+    </div>
+    <div class="service-content slide_in" data-animation="left">
+      <h2>Number Plate</h2>
+      <p>Custom number plates for an individual touch to your vehicle. Reflect your unique style with our diverse customization options.</p>
+    </div>
+  </div>
 </div>
 
-<section class="testimonials">
-  <h2>What Our Clients Say</h2>
-  <div class="testimonial">
-    <blockquote>"Graphix-Pro transformed our storefront. Highly recommend their services!"</blockquote>
-    <p>- Business Owner</p>
-  </div>
-  <!-- Add more testimonials as needed -->
-</section>
 
-<section class="contact">
-  <h2>Contact Us</h2>
-  <p>Have a project in mind? <a href="{% url 'contact' %}">Get in touch</a> today!</p>
-</section>
+<div class="content-wrapper">
+  <h1>Our Reviews</h1>
+  <div class="blue-line"></div>
+  <div class="wrapper-for-arrows">
+    <div style="opacity: 0;" class="chicken"></div>
+    <div id="reviewWrap" class="review-wrap">
+      <div id="imgDiv" class="">
+      </div>
+      <div id="personName"></div>
+      <div id="profession"></div>
+      <div id="description">
+      </div>
+    </div>
+    <div id="surpriseMeBtn" class="surprise-me-btn">Surprise me</div>
+    <div class="left-arrow-wrap arrow-wrap">
+      <div class="arrow" id="leftArrow"></div>
+    </div>
+    <div class="right-arrow-wrap arrow-wrap">
+      <div class="arrow" id="rightArrow"></div>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="main.js"></script>
+
 {% endblock %}
 
 {% block extrajs %}
