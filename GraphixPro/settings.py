@@ -21,6 +21,7 @@ import dj_database_url
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
+    DATABASE_URL=(str, 'postgres://przbbsdukigsks:6e5814a5e409c291ff9df0ea90fb2d667f2c9791600cb96608b2c69d8297a7aa@ec2-52-54-200-216.compute-1.amazonaws.com:5432/df6katnmnptcjj'),
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -94,15 +95,10 @@ WSGI_APPLICATION = 'GraphixPro.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
-    }
+    'default': env.db('DATABASE_URL', default='postgres://przbbsdukigsks:6e5814a5e409c291ff9df0ea90fb2d667f2c9791600cb96608b2c69d8297a7aa@ec2-52-54-200-216.compute-1.amazonaws.com:5432/df6katnmnptcjj')
 }
+
+DATABASES['default'] = dj_database_url.config(default=env('DATABASE_URL'), conn_max_age=600, ssl_require=True)
 
 
 # Password validation
