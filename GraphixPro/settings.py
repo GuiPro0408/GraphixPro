@@ -92,15 +92,24 @@ WSGI_APPLICATION = 'GraphixPro.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
 DATABASES = {
-    'default': dj_database_url.parse(
-        'postgres://default:JFgyd5htb1Ui@ep-dark-art-a4twkn0p.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require',
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'JFgyd5htb1Ui',
+        'HOST': 'ep-dark-art-a4twkn0p-pooler.us-east-1.aws.neon.tech',
+        'PORT': 5432,
+        "CONN_MAX_AGE": 600,
+    }
 }
 
-
+DATABASES['default'] = dj_database_url.parse(
+    'postgres://default:JFgyd5htb1Ui@ep-dark-art-a4twkn0p.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require',
+    conn_max_age=600,
+    conn_health_checks=True,
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
