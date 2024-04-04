@@ -46,38 +46,38 @@ let isChickenVisible;
 let people = [
   {
     photo:
-      'url("https://cdn.pixabay.com/photo/2018/03/06/22/57/portrait-3204843_960_720.jpg")',
-    name: "Susan Smith",
+      'url("/static/img/png(1).jpeg")',
+    name: "Ryan Juste",
     profession: "WEB DEVELOPER",
     description:
-      "Cheese and biscuits chalk and cheese fromage frais. Cheeseburger caerphilly cheese slices chalk and cheese cheeseburger mascarpone danish fontina rubber cheese. Squirty cheese say cheese manchego jarlsberg lancashire taleggio cheese and wine squirty cheese. Babybel pecorino feta macaroni cheese brie queso everyone loves gouda. Cheese and biscuits camembert de normandie fromage fromage macaroni cheese"
+      "Turning to this team for our Vehicle Wrap and Signboard design completely transformed our company's road presence. Their professionalism, creativity, and attention to detail really made a difference. Every step of the process was smooth and transparent, resulting in a final product that exceeded all our expectations. I highly recommend their services to anyone looking to enhance their brand image."
   },
 
   {
     photo:
-      "url('https://cdn.pixabay.com/photo/2019/02/11/20/20/woman-3990680_960_720.jpg')",
-    name: "Anna Grey",
-    profession: "UFC FIGHTER",
+      "url('/static/img/png(2).jpg')",
+    name: "Guillaume Juste",
+    profession: "WEB DEVELOPER",
     description:
-      "I'm baby migas cornhole hell of etsy tofu, pickled af cardigan pabst. Man braid deep v pour-over, blue bottle art party thundercats vape. Yr waistcoat whatever yuccie, farm-to-table next level PBR&B. Banh mi pinterest palo santo, aesthetic chambray leggings activated charcoal cred hammock kitsch humblebrag typewriter neutra knausgaard. Pabst succulents lo-fi microdosing portland gastropub Banh mi pinterest palo santo"
+      "From our first collaboration, I was impressed by the exceptional quality of their work. The Posters, Number Plates, and Decals we ordered for our special event were far superior to what we had hoped for. The attention to detail and the team's dedication to meeting our specific needs were remarkable. A reliable and highly recommended partner for all your signage needs."
   },
 
   {
     photo:
-      "url('https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg')",
-    name: "Branson Cook",
-    profession: "ACTOR",
+      "url('')",
+    name: "Adarsh Bhujan",
+    profession: "GRAPHIC DESIGNER",
     description:
-      "Radio telescope something incredible is waiting to be known billions upon billions Jean-François Champollion hearts of the stars tingling of the spine. Encyclopaedia galactica not a sunrise but a galaxyrise concept of the number one encyclopaedia galactica from which we spring bits of moving fluff. Vastness is bearable only through love paroxysm of global death concept"
+      "The efficiency and visual impact of the solutions offered by this company are unparalleled. Their work on the One Way Vision and Roller Banners not only caught attention but also conveyed our message perfectly. Additionally, the Window Tint for our premises significantly improved aesthetics while increasing our privacy. Their quality of service is exceptional, and I can only warmly recommend them."
   },
 
   {
     photo:
-      "url('https://cdn.pixabay.com/photo/2014/10/30/17/32/boy-509488_960_720.jpg')",
-    name: "Julius Grohn",
-    profession: "PROFESSIONAL CHILD",
+      "url('')",
+    name: "Ayaz Jeetun",
+    profession: "CAR WRAPPER",
     description:
-      "Biscuit chocolate pastry topping lollipop pie. Sugar plum brownie halvah dessert tiramisu tiramisu gummi bears icing cookie. Gummies gummi bears pie apple pie sugar plum jujubes. Oat cake croissant bear claw tootsie roll caramels. Powder ice cream caramels candy tiramisu shortbread macaroon chocolate bar. Sugar plum jelly-o chocolate dragée tart chocolate marzipan cupcake gingerbread."
+      "Working with this team for our company's rebranding was an eye-opener. From creating Business Cards to installing a spectacular Illuminating Sign, every element was executed to perfection. Their innovation, ability to exceed expectations, and professionalism are unmatched. They offer a remarkable customer experience, making them the ideal partner for those looking to stand out."
   }
 ];
 
