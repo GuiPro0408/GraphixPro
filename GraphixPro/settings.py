@@ -20,7 +20,7 @@ import dj_database_url
 
 env = environ.Env(
     # set casting, default value
-    DEBUG=(bool, False)
+    DEBUG=(bool, False),
     DATABASE_URL=(str, 'postgres://przbbsdukigsks:6e5814a5e409c291ff9df0ea90fb2d667f2c9791600cb96608b2c69d8297a7aa@ec2-52-54-200-216.compute-1.amazonaws.com:5432/df6katnmnptcjj'),
 )
 
