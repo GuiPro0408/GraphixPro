@@ -96,16 +96,16 @@ WSGI_APPLICATION = 'GraphixPro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
+        'NAME': 'df6katnmnptcjj',
+        'USER': 'przbbsdukigsks',
+        'PASSWORD': '6e5814a5e409c291ff9df0ea90fb2d667f2c9791600cb96608b2c69d8297a7aa',
+        'HOST': 'ec2-52-54-200-216.compute-1.amazonaws.com',
+        'PORT': 5432,
         "CONN_MAX_AGE": 600,
     }
 }
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
