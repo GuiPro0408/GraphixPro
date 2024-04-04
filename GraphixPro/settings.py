@@ -16,6 +16,7 @@ import cloudinary.uploader
 import cloudinary.api
 import environ
 import os
+import dj_database_url
 
 env = environ.Env(
     # set casting, default value
@@ -95,14 +96,15 @@ WSGI_APPLICATION = 'GraphixPro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'graphixpro',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
 }
 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
