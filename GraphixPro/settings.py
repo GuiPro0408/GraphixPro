@@ -17,6 +17,9 @@ import cloudinary.api
 import environ
 import os
 import dj_database_url
+import django_heroku
+
+django_heroku.settings(locals()) # Activate Django-Heroku.
 
 env = environ.Env(
     # set casting, default value
@@ -37,6 +40,8 @@ DEBUG = env('DEBUG')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
+
+IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -93,23 +98,23 @@ WSGI_APPLICATION = 'GraphixPro.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'verceldb',
-        'USER': 'default',
-        'PASSWORD': 'JFgyd5htb1Ui',
-        'HOST': 'ep-dark-art-a4twkn0p-pooler.us-east-1.aws.neon.tech',
-        'PORT': 5432,
-        "CONN_MAX_AGE": 600,
+if IS_HEROKU_APP:
+    DATABASES = {
+        'default': dj_database_url.config(conn_max_age=600, conn_health_checks=True)
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'verceldb',
+            'USER': 'default',
+            'PASSWORD': 'JFgyd5htb1Ui',
+            'HOST': 'ep-dark-art-a4twkn0p-pooler.us-east-1.aws.neon.tech',
+            'PORT': 5432,
+            "CONN_MAX_AGE": 600,
+        }
+    }
 
-DATABASES['default'] = dj_database_url.parse(
-    'postgres://default:JFgyd5htb1Ui@ep-dark-art-a4twkn0p.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require',
-    conn_max_age=600,
-    conn_health_checks=True,
-)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
