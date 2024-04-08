@@ -19,8 +19,6 @@ import os
 import dj_database_url
 import django_heroku
 
-django_heroku.settings(locals()) # Activate Django-Heroku.
-
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
@@ -193,3 +191,7 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+
+
+# heroku settings
+django_heroku.settings(locals()) # Activate Django-Heroku.
