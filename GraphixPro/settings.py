@@ -151,11 +151,12 @@ USE_TZ = True
 # Define the static file directory
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ BASE_DIR / 'static' ]
-STATIC_ROOT = 'static_root'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
 # Define the media file directory
-MEDIA_URL = '/media_root/'
-MEDIA_ROOT = 'media_root'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+
 
 # Define the sass file directory
 STATICFILES_FINDERS = [
