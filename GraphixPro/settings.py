@@ -17,7 +17,6 @@ import cloudinary.api
 import environ
 import os
 import dj_database_url
-import django_heroku
 
 env = environ.Env(
     # set casting, default value
@@ -38,8 +37,6 @@ DEBUG = env('DEBUG')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
-
-IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -70,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'GraphixPro.urls'
@@ -96,23 +94,14 @@ WSGI_APPLICATION = 'GraphixPro.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-if IS_HEROKU_APP:
-    DATABASES = {
-        'default': dj_database_url.config(conn_max_age=600, conn_health_checks=True)
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'verceldb',
-            'USER': 'default',
-            'PASSWORD': 'JFgyd5htb1Ui',
-            'HOST': 'ep-dark-art-a4twkn0p-pooler.us-east-1.aws.neon.tech',
-            'PORT': 5432,
-            "CONN_MAX_AGE": 600,
-        }
-    }
 
+DATABASES = {
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgres://graphix_pro:KsiRfsJdcMXtAtWJJjcinrw4CKy4Hb2M@dpg-coakfra0si5c73d0u8g0-a/graphix_pro',
+        conn_max_age=600
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -151,11 +140,15 @@ USE_TZ = True
 # Define the static file directory
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ BASE_DIR / 'static' ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+STATIC_ROOT = 'static_root'
+
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Define the media file directory
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+MEDIA_URL = '/media_root/'
+MEDIA_ROOT = 'media_root'
 
 
 # Define the sass file directory
@@ -185,9 +178,6 @@ cloudinary.config(
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
-
-STATICFILES_STORAGE  = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-
 # Enail
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -195,7 +185,3 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-
-
-# heroku settings
-django_heroku.settings(locals()) # Activate Django-Heroku.
