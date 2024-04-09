@@ -12,4 +12,4 @@ python manage.py collectstatic --no-input
 python manage.py migrate
 
 # create superuser
-echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', os.environ.get('ADMIN_EMAIL'), os.environ.get('ADMIN_PASSWORD'))" | python manage.py shell
+echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'guillaume.juste0408@gmail.com', 'adminpassword')" | python manage.py shell
