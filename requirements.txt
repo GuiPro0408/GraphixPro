@@ -18,7 +18,7 @@ django-cloudinary-storage==0.3.0
 django-compressor==4.4
 django-environ==0.10.0
 django-heroku==0.3.1
-django-jazzmin==2.6.0
+django-jazzmin @ https://github.com/farridav/django-jazzmin/archive/refs/heads/master.zip#sha256=3fdeb44a409ac7f163ca41c37bd57c69cdb5e08bdf61113ba14c3aade52ae3b5
 django-phonenumber-field==7.1.0
 django-sass-processor==1.4
 docstring-parser==0.15
